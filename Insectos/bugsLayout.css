@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background: rgb(221, 233, 221);
+    font-size: 16px;
+}
+
+.headerAll{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    border: 5px rgb(162, 224, 146) solid;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background: rgb(191, 254, 223);
+}
+
+.headerLeft{
+    padding-left: 15px;
+}
+
+.imageheaderLeft{
+    border: 5px rgb(162, 224, 146) solid;
+    height: 88.84px;
+    border-radius: 5px; 
+}
+
+.headerRight{
+    display: flex;
+    align-content: space-around;
+    margin: 20px 60px;  
+}
+
+.buttonHeader{
+    border: 2px rgb(162, 224, 146) solid;
+    background-color: rgb(189, 180, 58);
+    margin: 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+main{
+    margin: 20px;
+    border: 5px rgb(162, 224, 146) solid;
+    border-radius: 10px;
+    padding: 30px 100px 300px;
+    background: rgb(250, 252, 251);
+    background-image: url(https://cdn.pixabay.com/photo/2020/07/27/10/33/animal-crossing-leaf-5442035_960_720.png);
+    background-size: 95px;
+    background-repeat: space;  
+}
+
+.listFishFossilBugs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dataFishFossilBugs{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+#imageAndNameFish{
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    border-top: 2px rgba(110, 111, 110, 0.524) solid; 
+    height: 100px; 
+}
+
+
+
+@media (min-width: 600px) {
+
+    
+}
