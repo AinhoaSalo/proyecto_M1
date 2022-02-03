@@ -9,38 +9,46 @@ body{
     font-size: 16px;
 }
 
-.headerAll{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-    border: 5px rgb(162, 224, 146) solid;
-    border-radius: 10px;
-    padding: 20px 10px;
-    background: rgb(191, 254, 223);
-}
-
-.headerLeft{
-    padding-left: 15px;
-}
-
-.imageheaderLeft{
-    border: 5px rgb(162, 224, 146) solid;
-    height: 88.84px;
-    border-radius: 5px; 
-}
-
-.headerRight{
-    display: flex;
-    align-content: space-around;
-    margin: 20px 60px;  
-}
-
-.buttonHeader{
-    border: 2px rgb(162, 224, 146) solid;
+.topnav {
+    overflow: hidden;
     background-color: rgb(189, 180, 58);
-    margin: 10px;
-    padding: 5px 20px;
-    border-radius: 5px;
+    position: relative;
+    margin:20px;
+    border-radius: 10px;
+    border: 4px rgb(162, 224, 146) solid;
+}
+  
+.topnav #myLinks {
+display: none;
+
+}
+  
+.topnav a {
+color: white;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+display: block;
+
+}
+  
+.topnav a.icon {
+background: rgb(191, 254, 223);
+display: block;  
+position: absolute;
+right: 0;
+top: 0;	
+
+}
+  
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+  
+.active {
+background-color: rgb(191, 254, 223);
+color: white;
 }
 
 main{

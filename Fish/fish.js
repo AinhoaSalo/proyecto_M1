@@ -26,6 +26,15 @@ function numberToMonth(array) {
   return monthString;
 }
 
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 function fishNameImage() {
   let keyNameFish = this.value;
   let image = fishList[keyNameFish].icon_uri;

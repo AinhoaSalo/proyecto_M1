@@ -13,6 +13,15 @@ let bugsList;
             });
         })
 
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+              x.style.display = "none";
+            } else {
+              x.style.display = "block";
+            }
+          }
+
         function getMonthByNumber(number) {
             let month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"];
             return month[(number-1)]

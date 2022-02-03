@@ -13,6 +13,15 @@ fetch("http://acnhapi.com/v1/fossils/")
     });
 })
 
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+
 function fossilNameImage() {
     let keyNameFossil = this.value;
     let image = fossilList[keyNameFossil].image_uri;
