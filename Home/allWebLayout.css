@@ -121,18 +121,29 @@ main{
     background: rgb(191, 254, 223);
 }
 
+.FishBugsFossilMainHomeMobile{
+    display: flex;
+    flex-direction: column ;
+    margin: 0px 30px;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
 .FishBugsFossilMainHomeDesktop{
     display: flex;
     flex-direction: column ;
     margin: 0px 30px;
     padding: 0px 30px;
+    padding-bottom: 10px;
+    font-size: 17px;
 }
 
-.FishBugsFossilMainHomeMobile{
+.FishBugsFossilMainHomeDesktopMaxPixel{
     display: flex;
     flex-direction: column ;
     margin: 0px 30px;
-    padding: 0px 30px;
+    font-size: 19px;
+    padding-bottom: 10px;
 }
 
 .linkHomeMainMobile{
@@ -147,6 +158,10 @@ main{
     flex-direction: row;
     justify-content: space-around;
     margin: 20px;
+}
+
+.imgLinkHomeMain{
+    border-radius: 5%;
 }
 
 .listFishFossilBugs{
@@ -213,15 +228,40 @@ footer{
     .FishBugsFossilMainHomeDesktop{
         display: none;
     }
+
+    .FishBugsFossilMainHomeDesktopMaxPixel{
+        display: none;
+    }
+
 }
 
-@media (min-width: 740px) {
+@media (min-width: 740px) and (max-width: 959.99px) {
 
     .topnav{
         display: none; 
     }
 
     .FishBugsFossilMainHomeMobile{
+        display: none;
+    }
+
+    .FishBugsFossilMainHomeDesktopMaxPixel{
+        display: none;
+    }
+ 
+}
+
+@media (min-width: 960px)  {
+ 
+    .topnav{
+        display: none; 
+    }
+
+    .FishBugsFossilMainHomeMobile{
+        display: none;
+    }
+
+    .FishBugsFossilMainHomeDesktop{
         display: none;
     }
  
