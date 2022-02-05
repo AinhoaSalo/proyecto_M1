@@ -14,10 +14,10 @@
     <div class="topnav">
       <a href="#home" class="active"><img src="https://areajugones.sport.es/wp-content/uploads/2021/10/captura-de-pantalla-2021-10-15-a-las-163222.jpg" alt="Logo Animal Crossing" width="100px" height= "60px";></a>
       <div id="myLinks">
-        <a href="#home">Inicio</a>
-        <a href="#fossil">Fosiles</a>
-        <a href="#bugs">Insectos</a>
-        <a href="#fish">Peces</a>
+        <a href="../Home/home.html">Inicio</a>
+        <a href="../Fossil/FossilSearch.html">Fosiles</a>
+        <a href="./BugsSearch.html">Insectos</a>
+        <a href="../Fish/fishSearch.html">Peces</a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -29,37 +29,36 @@
         <div class="imageheaderLeft"><img src="https://areajugones.sport.es/wp-content/uploads/2021/10/captura-de-pantalla-2021-10-15-a-las-163222.jpg" alt="Logo Animal Crossing" width="155px" height= "80px";></div>
       </div>
       <div class="headerRight">
-        <div class="buttonHeader"><p>Inicio</p></div>
-        <div class="buttonHeader"><p>Fosiles</p></div>
-        <div class="buttonHeader"><p>Insectos</p></div>
-        <div class="buttonHeader"><p>Peces</p></div>
+        <div class="buttonHeader"><a href="../Home/home.html">Inicio</a></div>
+        <div class="buttonHeader"><a href="../Fossil/FossilSearch.html">Fosiles</a></div>
+        <div class="buttonHeader"><a href="./BugsSearch.html">Insectos</a></div>
+        <div class="buttonHeader"><a href="../Fish/fishSearch.html">Peces</a></div>
       </div>
     </div>
-
   </header>
 
-    <main>
-      <div class="listFishFossilBugs">
-        <select class="dropdownFishFossilBugs" value="0" >
-            <option value="default">Seleccione un insecto</option>
-        </select>
+  <main>
+    <div class="listFishFossilBugs">
+      <select class="dropdownFishFossilBugs" value="0" >
+          <option value="default">Seleccione un insecto</option>
+      </select>
+    </div>
+
+    <div class="dataFishFossilBugs">
+      <div class="imageAndNameFishBugs">
+        <div class="imgFishBugsMain"></div>
+        <div class="nameFishBugsMain"></div>
       </div>
+      <div class="monthFishingPriceFishAndBugs"></div>
+    </div>
 
-      <div class="dataFishFossilBugs">
-        <div class="imageAndNameFishBugs">
-          <div class="imgFishBugsMain"></div>
-          <div class="nameFishBugsMain"></div>
-        </div>
-        <div class="monthFishingPriceFishAndBugs"></div>
-      </div>
+    <div class="favoriteStar"></div>
 
-      <div class="favoriteStar"></div>
-
-    </main>
+  </main>
     
-    <footer>
+  <footer>
 
-    </footer>
+  </footer>
 
     <script src="./bugs.js"></script>
 </body>
