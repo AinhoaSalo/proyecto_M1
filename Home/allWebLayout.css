@@ -138,14 +138,6 @@ main{
     font-size: 17px;
 }
 
-.FishBugsFossilMainHomeDesktopMaxPixel{
-    display: flex;
-    flex-direction: column ;
-    margin: 0px 30px;
-    font-size: 19px;
-    padding-bottom: 10px;
-}
-
 .linkHomeMainMobile{
     display: flex;
     flex-direction: row;
@@ -160,6 +152,14 @@ main{
     margin: 20px;
 }
 
+.FishBugsFossilMainHomeDesktopMaxPixel{
+    display: flex;
+    flex-direction: column ;
+    margin: 0px 30px;
+    font-size: 19px;
+    padding-bottom: 10px;
+}
+
 .imgLinkHomeMain{
     border-radius: 5%;
 }
@@ -167,6 +167,10 @@ main{
 .listFishFossilBugs{
     display: flex;
     justify-content: space-around;
+}
+
+.blockTextHome{
+   padding: 0px 0px 10px 50px;
 }
 
 .dataFishFossilBugs{
