@@ -94,7 +94,7 @@ body{
 }
 
 
-main{
+/* main{
     margin: 20px;
     border: 5px rgb(162, 224, 146) solid;
     border-radius: 10px;
@@ -103,7 +103,7 @@ main{
     background-image: url("../pictures/Hoja_main.png");
     background-size: 95px;
     background-repeat: space;  
-}
+} */
 
 .mainHome{
     margin: 20px;
@@ -164,13 +164,68 @@ main{
     border-radius: 5%;
 }
 
+.blockTextHome{
+   padding: 0px 0px 10px 50px;
+}
+
+#mainFossil{
+    margin: 20px;
+    border: 5px rgb(162, 224, 146) solid;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgb(250, 252, 251);
+    background-image: url("../pictures/Hoja_main.png");
+    background-size: 95px;
+    background-repeat: space;  
+}
+
+.mainBugsFish{
+    margin: 20px;
+    border: 5px rgb(162, 224, 146) solid;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgb(250, 252, 251);
+    background-image: url("../pictures/Hoja_main.png");
+    background-size: 95px;
+    background-repeat: space;  
+}
+
 .listFishFossilBugs{
     display: flex;
     justify-content: space-around;
 }
 
-.blockTextHome{
-   padding: 0px 0px 10px 50px;
+.formatDataMainSelectMobile{
+    background-color: rgba(189, 180, 58, 0.678);
+    padding: 80px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.nameAndPriceFossilMobile p{
+    font-size: 16px;
+}
+
+.formatDataMainSelectDesktop{
+    background-color: rgba(189, 180, 58, 0.678);
+    padding: 90px 60px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.nameAndPriceFossilDesktop p{
+    font-size: 18px;
+}
+
+.formatDataMainSelectDesktopMaxPixel{
+    background-color: rgba(189, 180, 58, 0.678);
+    padding: 150px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.nameAndPriceFossilDesktopMaxPixel p{
+    font-size: 20px;
 }
 
 .dataFishFossilBugs{
@@ -179,10 +234,29 @@ main{
     margin: 50px;
 }
 
+.sonImgFossilMainMobile img{
+    width: 150px;
+    height: auto;
+}
+
+.sonImgFossilMainDesktop img{
+    width: 200px;
+    height: auto;
+}
+
+.sonImgFossilMainDesktopMaxPixel img{
+    width: 250px;
+    height: auto;
+}
+
+.sonNameAndPriceFossil{
+    margin: 10px;
+    font-size: 25px;
+}
+
 #imageAndNameFish{
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;  
 }
 
 .allFavorites{
@@ -233,9 +307,19 @@ footer{
         display: none;
     }
 
+    .formatDataMainSelectDesktop{
+        display: none;
+    
+    }
+
     .FishBugsFossilMainHomeDesktopMaxPixel{
         display: none;
     }
+
+    .formatDataMainSelectDesktopMaxPixel{
+        display: none;
+    }
+ 
 
 }
 
@@ -249,9 +333,18 @@ footer{
         display: none;
     }
 
+    .formatDataMainSelectMobile{
+        display: none;
+    }
+
     .FishBugsFossilMainHomeDesktopMaxPixel{
         display: none;
     }
+
+    .formatDataMainSelectDesktopMaxPixel{
+        display: none;
+    }
+ 
  
 }
 
@@ -264,8 +357,16 @@ footer{
     .FishBugsFossilMainHomeMobile{
         display: none;
     }
+    
+    .formatDataMainSelectMobile{
+        display: none;
+    }
 
     .FishBugsFossilMainHomeDesktop{
+        display: none;
+    }
+
+    .formatDataMainSelectDesktop{
         display: none;
     }
  

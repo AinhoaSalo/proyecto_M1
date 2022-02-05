@@ -32,23 +32,42 @@
         <div class="buttonHeader"><a href="../Home/home.html">Inicio</a></div>
         <div class="buttonHeader"><a href="./FossilSearch.html">Fossil</a></div>
         <div class="buttonHeader"><a href="../Bugs/BugsSearch.html">Insectos</a></div>
-        <div class="buttonHeader"><a href="../Fish/fishSearch.html">Peces</a>></div>
+        <div class="buttonHeader"><a href="../Fish/fishSearch.html">Peces</a></div>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="listFishFossilBugs">
-    <select class="dropdownFishFossilBugs" value="0" >
-        <option value="default">Seleccione un fosil</option>
-    </select>
-    </div>
-    <div class="dataFishFossilBugs">
-        <div class="imageFossil"></div>
-        <div class="nameAndPriceFossil"></div>
-    </div>
+    <div id="mainFossil">
+      <div class="listFishFossilBugs">
+      <select class="dropdownFishFossilBugs" value="0" >
+          <option value="default">Seleccione un fosil</option>
+      </select>
+      </div>
 
-    <div class="favoriteStar"></div>
+      <div class="formatDataMainSelectMobile">
+        <div class="dataFishFossilBugs">
+            <div class="imageFossilMobile"></div>
+            <div class="nameAndPriceFossilMobile"></div>
+        </div>
+      </div>
+
+      <div class="formatDataMainSelectDesktop">
+        <div class="dataFishFossilBugs">
+            <div class="imageFossilDesktop"></div>
+            <div class="nameAndPriceFossilDesktop"></div>
+        </div>
+      </div>
+
+      <div class="formatDataMainSelectDesktopMaxPixel">
+        <div class="dataFishFossilBugs">
+            <div class="imageFossilDesktopMaxPixel"></div>
+            <div class="nameAndPriceFossilDesktopMaxPixel"></div>
+        </div>
+      </div>
+
+      <div class="favoriteStar"></div>
+    </div>
   </main>
 
   <footer></footer>

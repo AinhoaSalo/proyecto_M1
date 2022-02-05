@@ -61,9 +61,15 @@ function fossilNameImage() {
     let image = fossilList[keyNameFossil].image_uri;
     let name = fossilList[keyNameFossil].name["name-EUes"];
     let priceMininook = fossilList[keyNameFossil].price;
-    document.querySelector('.imageFossil').innerHTML = `<div class="imgFossilMain"><img src=${image}/></div>`; 
-    document.querySelector('.nameAndPriceFossil').innerHTML = `<div id="nameFossilMain"><p>${name}</p></div></div><p>Precio en la Mininook: ${priceMininook}</p><button class="favorite">anadir a favorito</button>`;
-    document.querySelector('.favorite').addEventListener("click", addFavorite);
+    document.querySelector('.imageFossilMobile').innerHTML = `<div class="sonImgFossilMainMobile"><img src=${image}/></div>`; 
+    document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteMobile">anadir a favorito</button></div>`;
+    document.querySelector('.favoriteMobile').addEventListener("click", addFavorite);
+    document.querySelector('.imageFossilDesktop').innerHTML = `<div class="sonImgFossilMainDesktop"><img src=${image}/></div>`; 
+    document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktop">anadir a favorito</button></div>`;
+    document.querySelector('.favoriteDesktop').addEventListener("click", addFavorite);
+    document.querySelector('.imageFossilDesktopMaxPixel').innerHTML = `<div class="sonImgFossilMainDesktopMaxPixel"><img src=${image}/></div>`; 
+    document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktopMaxPixel">anadir a favorito</button></div>`;
+    document.querySelector('.favoriteDesktopMaxPixel').addEventListener("click", addFavorite);
 }
 
 
