@@ -1,4 +1,5 @@
-let fishList; 
+let fishList;
+let keyNameFish; 
 
 fetch("http://acnhapi.com/v1/fish/")
 .then(function (res){
@@ -13,17 +14,19 @@ fetch("http://acnhapi.com/v1/fish/")
     }); 
 })
 
-function getMonthByNumber(number) {
-  let month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"];
-  return month[(number-1)]
-}
+document.querySelector('.dropdownFishFossilBugs').onchange = fishNameImage;
+showFavorite();
 
-function numberToMonth(array) {
-  let monthString = [] 
-  for (let i = 0; i < array.length; i++) {
-    monthString[i] = getMonthByNumber(array[i])
-  }
-  return monthString;
+function showFavorite() {
+  document.querySelector('.favoriteStar').innerHTML = "";
+  if(localStorage.getItem("fishList")){
+    let arrayLocal = localStorage.getItem("fishList");
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    arrayLocalDesparsedo.forEach(fish => {
+      console.log(fish)
+      document.querySelector('.favoriteStar').innerHTML += `<img src=${fish.icon_uri}/><p>${fish.name["name-EUes"]}</p>`;  
+    });
+  } 
 }
 
 function myFunction() {
@@ -35,8 +38,38 @@ function myFunction() {
   }
 }
 
+function getMonthByNumber(number) {
+  let month = [" Enero"," Febrero"," Marzo"," Abril"," Mayo"," Junio"," Julio", " Agosto"," Septiembre", " Octubre", " Noviembre", " Diciembre"];
+  return month[(number-1)]
+}
+
+function numberToMonth(array) {
+  let monthString = [] 
+  for (let i = 0; i < array.length; i++) {
+    monthString[i] = getMonthByNumber(array[i])
+  }
+  return monthString;
+}
+
+function addFavorite() {
+  if(localStorage.getItem("fishList")){
+    let arrayLocal = localStorage.getItem("fishList");
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    console.log(arrayLocalDesparsedo);
+    arrayLocalDesparsedo.push(fishList[keyNameFish]);
+    let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
+    localStorage.setItem("fishList", nuevoArrayParseado);
+  } else {
+      let nuevoArrayParseado = JSON.stringify([fishList[keyNameFish]]);
+      localStorage.setItem("fishList", nuevoArrayParseado);
+  }
+  showFavorite() 
+}
+
+
+
 function fishNameImage() {
-  let keyNameFish = this.value;
+  keyNameFish = document.querySelector('.dropdownFishFossilBugs').value;
   let image = fishList[keyNameFish].icon_uri;
   let name = fishList[keyNameFish].name["name-EUes"];
   let monthNorthern = fishList[keyNameFish].availability["month-array-northern"];
@@ -47,7 +80,6 @@ function fishNameImage() {
   let priceCjMininook = fishList[keyNameFish]["price-cj"];
   document.querySelector('.imgFishBugsMain').innerHTML = `<img src=${image}/>`;
   document.querySelector('.nameFishBugsMain').innerHTML =`<p>${name}</p>`; 
-  document.querySelector('.monthFishingPriceFishAndBugs').innerHTML = `<div><p>Meses de pesca en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de pesca en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene CJ a la isla: ${priceCjMininook}`;
+  document.querySelector('.monthFishingPriceFishAndBugs').innerHTML = `<div><p>Meses de pesca en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de pesca en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene CJ a la isla: ${priceCjMininook} <button class="favorite">anadir a favorito</button>`;
+  document.querySelector('.favorite').addEventListener("click", addFavorite);
 }
-
-document.querySelector('.dropdownFishFossilBugs').onchange = fishNameImage;

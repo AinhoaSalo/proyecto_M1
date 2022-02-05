@@ -5,43 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peces Animal Crossing</title>
-    <link rel="stylesheet" href="./fishLayout.css">
+    <link rel="stylesheet" href="../Home/allWebLayout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
 <body>
-
   <header>
+
     <div class="topnav">
       <a href="#home" class="active"><img src="https://areajugones.sport.es/wp-content/uploads/2021/10/captura-de-pantalla-2021-10-15-a-las-163222.jpg" alt="Logo Animal Crossing" width="100px" height= "60px";></a>
       <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a href="#home">Inicio</a>
+        <a href="#fossil">Fosiles</a>
+        <a href="#bugs">Insectos</a>
+        <a href="#fish">Peces</a>
       </div>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
+
+    <div class="headerAll">
+      <div class="headerLeft">
+        <div class="imageheaderLeft"><img src="https://areajugones.sport.es/wp-content/uploads/2021/10/captura-de-pantalla-2021-10-15-a-las-163222.jpg" alt="Logo Animal Crossing" width="155px" height= "80px";></div>
+      </div>
+      <div class="headerRight">
+        <div class="buttonHeader"><p>Inicio</p></div>
+        <div class="buttonHeader"><p>Fosiles</p></div>
+        <div class="buttonHeader"><p>Insectos</p></div>
+        <div class="buttonHeader"><p>Peces</p></div>
+      </div>
+    </div>
+
   </header>
 
-    <main>
-        <div class="listFishFossilBugs">
-          <select class="dropdownFishFossilBugs" value="0" >
-              <option value="default">Seleccione un pez</option>
-          </select>
-        </div>
+  <main>
 
-        <div class="dataFishFossilBugs">
-          <div class="imageAndNameFishBugs">
-            <div class="imgFishBugsMain"></div>
-            <div class="nameFishBugsMain"></div>
-          </div>
-          <div class="monthFishingPriceFishAndBugs"></div>
-        </div>
-    </main>
+    <div class="listFishFossilBugs">
+      <select class="dropdownFishFossilBugs" value="0" >
+          <option value="default">Seleccione un pez</option>
+      </select>
+    </div>
+
+    <div class="dataFishFossilBugs">
+      <div class="imageAndNameFishBugs">
+        <div class="imgFishBugsMain"></div>
+        <div class="nameFishBugsMain"></div>
+      </div>
+      <div class="monthFishingPriceFishAndBugs"></div>
+    </div>
+
+    <div class="favoriteStar"></div>
+
+  </main>
     
-  <footer><img src="https://c.wallhere.com/photos/49/1d/Animal_Crossing_New_Leaf_Animal_Crossing_New_Leaf_logo_mint_green_light_green_dual_monitors-1381365.jpg!d" alt="fondo hoja ACNH" width="100%" height="300px"></footer>
+  <footer>
+  
+  </footer>
 
   <script src="./fish.js"></script>
 
