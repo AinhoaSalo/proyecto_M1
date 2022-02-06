@@ -1,5 +1,6 @@
 let fishList;
 let keyNameFish; 
+const list = "fishList";
 
 fetch("http://acnhapi.com/v1/fish/")
 .then(function (res){
@@ -59,16 +60,17 @@ function numberToMonth(array) {
 }
 
 function addFavorite() {
-  if(localStorage.getItem("fishList")){
-    let arrayLocal = localStorage.getItem("fishList");
+  if(localStorage.getItem()){
+    let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
-    console.log(arrayLocalDesparsedo);
-    arrayLocalDesparsedo.push(fishList[keyNameFish]);
-    let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
-    localStorage.setItem("fishList", nuevoArrayParseado);
+    if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
+      arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
+      let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
+      localStorage.setItem(list, nuevoArrayParseado);
+    }
   } else {
-      let nuevoArrayParseado = JSON.stringify([fishList[keyNameFish]]);
-      localStorage.setItem("fishList", nuevoArrayParseado);
+      let nuevoArrayParseado = JSON.stringify([fossilList[keyNameFossil]]);
+      localStorage.setItem(list, nuevoArrayParseado);
   }
   showFavorite() 
 }

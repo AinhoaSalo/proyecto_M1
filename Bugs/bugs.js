@@ -1,5 +1,6 @@
 let bugsList;
 let keyNameBugs;
+const list = "bugsList";
 
     fetch("http://acnhapi.com/v1/bugs/")
     .then(function (res){
@@ -58,19 +59,20 @@ let keyNameBugs;
     }
 
     function addFavorite() {
-        if(localStorage.getItem("bugsList")){
-          let arrayLocal = localStorage.getItem("bugsList");
+        if(localStorage.getItem()){
+          let arrayLocal = localStorage.getItem(list);
           let arrayLocalDesparsedo = JSON.parse(arrayLocal);
-          console.log(arrayLocalDesparsedo);
-          arrayLocalDesparsedo.push(bugsList[keyNameBugs]);
-          let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
-          localStorage.setItem("bugsList", nuevoArrayParseado);
+          if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
+            arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
+            let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
+            localStorage.setItem(list, nuevoArrayParseado);
+          }
         } else {
-            let nuevoArrayParseado = JSON.stringify([bugsList[keyNameBugs]]);
-            localStorage.setItem("bugsList", nuevoArrayParseado);
+            let nuevoArrayParseado = JSON.stringify([fossilList[keyNameFossil]]);
+            localStorage.setItem(list, nuevoArrayParseado);
         }
         showFavorite() 
-    }
+      }
 
     function deleteFavorite() {
         localStorage.removeItem([bugsList[keyNameBugs]]);

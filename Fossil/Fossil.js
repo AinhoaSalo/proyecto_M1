@@ -1,5 +1,6 @@
 let fossilList;
 let keyNameFossil;
+const list = "fossilList";
 
 fetch("http://acnhapi.com/v1/fossils/")
 .then(function (res){
@@ -27,29 +28,39 @@ console.log(fossilList)
 document.querySelector('.dropdownFishFossilBugs').onchange = fossilNameImage;
 showFavorite()
 
+function checkIfItIsAlready(key,arr){
+  let check = false
+  arr.forEach(current =>{
+    if (current["file-name"] == key) {
+      check = true
+    } 
+  })
+  return check
+}
+
 function showFavorite() {
   document.querySelector('.callFavoriteStar').innerHTML = "";
   if(localStorage.getItem("fossilList")){
     let arrayLocal = localStorage.getItem("fossilList");
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     arrayLocalDesparsedo.forEach(fossil => {
-      console.log(fossil)
       document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
     });
   } 
 }
 
 function addFavorite() {
-  if(localStorage.getItem("fossilList")){
-    let arrayLocal = localStorage.getItem("fossilList");
+  if(localStorage.getItem()){
+    let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
-    console.log(arrayLocalDesparsedo);
-    arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
-    let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
-    localStorage.setItem("fossilList", nuevoArrayParseado);
+    if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
+      arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
+      let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
+      localStorage.setItem(list, nuevoArrayParseado);
+    }
   } else {
       let nuevoArrayParseado = JSON.stringify([fossilList[keyNameFossil]]);
-      localStorage.setItem("fossilList", nuevoArrayParseado);
+      localStorage.setItem(list, nuevoArrayParseado);
   }
   showFavorite() 
 }
