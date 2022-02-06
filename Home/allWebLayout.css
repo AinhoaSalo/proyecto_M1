@@ -129,14 +129,18 @@ body{
 .linkHomeMainMobile{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin: 20px;
 }
 
 .linkHomeMainDesktop{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    margin: 20px;
+}
+
+.linkHomeMainDesktopMaxPixel{
+    display: flex;
+    flex-direction: row;
     margin: 20px;
 }
 
