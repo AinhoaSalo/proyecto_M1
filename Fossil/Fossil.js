@@ -18,16 +18,16 @@ fetch("http://acnhapi.com/v1/fossils/")
 console.log(fossilList)
 
 document.querySelector('.dropdownFishFossilBugs').onchange = fossilNameImage;
-
+showFavorite()
 
 function showFavorite() {
-  document.querySelector('.favoriteStar').innerHTML = "";
+  document.querySelector('.callFavoriteStar').innerHTML = "";
   if(localStorage.getItem("fossilList")){
     let arrayLocal = localStorage.getItem("fossilList");
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     arrayLocalDesparsedo.forEach(fossil => {
       console.log(fossil)
-      document.querySelector('.favoriteStar').innerHTML += `<img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p>`;  
+      document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
     });
   } 
 }
@@ -64,9 +64,11 @@ function fossilNameImage() {
     document.querySelector('.imageFossilMobile').innerHTML = `<div class="sonImgFossilMainMobile"><img src=${image}/></div>`; 
     document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteMobile">anadir a favorito</button></div>`;
     document.querySelector('.favoriteMobile').addEventListener("click", addFavorite);
+
     document.querySelector('.imageFossilDesktop').innerHTML = `<div class="sonImgFossilMainDesktop"><img src=${image}/></div>`; 
     document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktop">anadir a favorito</button></div>`;
     document.querySelector('.favoriteDesktop').addEventListener("click", addFavorite);
+
     document.querySelector('.imageFossilDesktopMaxPixel').innerHTML = `<div class="sonImgFossilMainDesktopMaxPixel"><img src=${image}/></div>`; 
     document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktopMaxPixel">anadir a favorito</button></div>`;
     document.querySelector('.favoriteDesktopMaxPixel').addEventListener("click", addFavorite);

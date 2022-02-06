@@ -15,7 +15,7 @@ body{
 
 .topnav {
     overflow: hidden;
-    background-color: rgb(189, 180, 58);
+    background-color: rgb(184, 157, 117);
     position: relative;
     margin:20px;
     border-radius: 10px;
@@ -44,7 +44,7 @@ body{
 }
   
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgba(193, 240, 184, 0.781);
     color: black;
 }
   
@@ -86,24 +86,12 @@ body{
 
 .buttonHeader{
     border: 2px rgb(162, 224, 146) solid;
-    background-color: rgb(189, 180, 58);
+    background-color: rgb(184, 157, 117);
     color: blanchedalmond;
     margin: 10px;
     padding: 5px 20px;
     border-radius: 5px;
 }
-
-
-/* main{
-    margin: 20px;
-    border: 5px rgb(162, 224, 146) solid;
-    border-radius: 10px;
-    padding: 30px 100px 300px;
-    background: rgb(250, 252, 251);
-    background-image: url("../pictures/Hoja_main.png");
-    background-size: 95px;
-    background-repeat: space;  
-} */
 
 .mainHome{
     margin: 20px;
@@ -196,7 +184,9 @@ body{
 }
 
 .formatDataMainSelectMobile{
-    background-color: rgba(189, 180, 58, 0.678);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(132, 189, 58, 0.678);
     padding: 80px;
     margin-top: 20px;
     border-radius: 15px;
@@ -207,7 +197,9 @@ body{
 }
 
 .formatDataMainSelectDesktop{
-    background-color: rgba(189, 180, 58, 0.678);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(132, 189, 58, 0.678);
     padding: 90px 60px;
     margin-top: 20px;
     border-radius: 15px;
@@ -218,7 +210,9 @@ body{
 }
 
 .formatDataMainSelectDesktopMaxPixel{
-    background-color: rgba(189, 180, 58, 0.678);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(132, 189, 58, 0.678);
     padding: 150px;
     margin-top: 20px;
     border-radius: 15px;
@@ -226,12 +220,6 @@ body{
 
 .nameAndPriceFossilDesktopMaxPixel p{
     font-size: 20px;
-}
-
-.dataFishFossilBugs{
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
 }
 
 .sonImgFossilMainMobile img{
@@ -260,16 +248,22 @@ body{
 }
 
 .allFavorites{
-    background:rgb(189, 180, 58);
+    background:rgb(184, 157, 117);
     margin: 0px;
     border-top: 2px rgb(162, 224, 146) solid;
-    border-bottom: 3px rgb(189, 180, 58) solid;
+    border-bottom: 3px rgb(184, 157, 117) solid;
+    border-radius: 7px;
+}
+
+.allFavorites img{
+    width: 100px;
+    height: auto;
 }
 
 #titleFavoritesHome{
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .favoriteStarHome{
@@ -280,22 +274,88 @@ body{
     border-radius: 10%;
 }
 
-.imgFish{
-    width: 10%;
+.favoriteBugsFishFossil{
+    background:rgb(184, 157, 117);
+    margin-top: 10px;
+    border-top: 2px rgb(162, 224, 146) solid;
+    border-bottom: 3px rgb(184, 157, 117) solid;
+    border-radius: 7px;
+}
+
+.favoriteBugsFishFossil img{
+   width: 100px;
+   height: 100px;
+}
+
+.titleFavoritesfossilBugsFish{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.callFavoriteStar{
+    display: flex;
+    flex-direction: row;
+}
+
+.sonCallFavoriteStar{
+    width: 25%;
 }
 
 footer{
     margin: 20px;
     border: 5px rgb(162, 224, 146) solid;
     border-radius: 10px;
-    padding: 30px 100px 100px;
+    padding: 10px;
     min-height: 100px;
     background-color: rgb(191, 254, 223);
     background-image: url("../pictures/Hoja_footer.png");
     background-repeat: no-repeat;
-    background-size: 80px; 
-    background-position: 97% 80%;  
+    background-size: 100px; 
+    background-position: 95% 50%;  
     
+}
+
+.parrafFooterLeft{
+    font-size: 12px;
+    padding: 15px 5px 5px 0px;
+}
+
+.titleFooter h4{
+    color: rgb(206, 131, 191);
+    padding: 10px 0px;
+}
+ 
+#dataFooter{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+
+#company{
+    width: 50%;
+}
+
+.dataFooterLeft{
+    margin-bottom: 20px;
+}
+
+footer span{
+    color: rgb(206, 131, 191);
+}
+
+#contact{
+    width: 50%;
+    padding-left: 5px;
+}
+
+#footerDown{
+    color: rgb(206, 131, 191);
+    border-top: 1px rgb(156, 152, 152) solid;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
 }
 
 @media (max-width: 739.99px) {
@@ -309,7 +369,10 @@ footer{
 
     .formatDataMainSelectDesktop{
         display: none;
+    }
     
+    .favoriteStarDesktop{
+        display: none;
     }
 
     .FishBugsFossilMainHomeDesktopMaxPixel{
@@ -317,6 +380,10 @@ footer{
     }
 
     .formatDataMainSelectDesktopMaxPixel{
+        display: none;
+    }
+
+    .favoriteStarDesktopMaxPixel{
         display: none;
     }
  
@@ -336,6 +403,10 @@ footer{
     .formatDataMainSelectMobile{
         display: none;
     }
+    
+    .favoriteStarMobile{
+        display: none;
+    }
 
     .FishBugsFossilMainHomeDesktopMaxPixel{
         display: none;
@@ -344,7 +415,10 @@ footer{
     .formatDataMainSelectDesktopMaxPixel{
         display: none;
     }
- 
+
+    .favoriteStarDesktopMaxPixel{
+        display: none;
+    }
  
 }
 
@@ -357,7 +431,11 @@ footer{
     .FishBugsFossilMainHomeMobile{
         display: none;
     }
-    
+
+        .favoriteStarMobile{
+        display: none;
+    }
+
     .formatDataMainSelectMobile{
         display: none;
     }
@@ -367,6 +445,10 @@ footer{
     }
 
     .formatDataMainSelectDesktop{
+        display: none;
+    }
+
+    .favoriteStarDesktop{
         display: none;
     }
  

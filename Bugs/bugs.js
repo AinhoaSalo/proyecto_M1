@@ -18,13 +18,13 @@ let keyNameBugs;
     showFavorite();
 
     function showFavorite() {
-        document.querySelector('.favoriteStar').innerHTML = "";
+        document.querySelector('.callFavoriteStar').innerHTML = "";
         if(localStorage.getItem("bugsList")){
           let arrayLocal = localStorage.getItem("bugsList");
           let arrayLocalDesparsedo = JSON.parse(arrayLocal);
           arrayLocalDesparsedo.forEach(bugs => {
             console.log(bugs)
-            document.querySelector('.favoriteStar').innerHTML += `<img src=${bugs.icon_uri}/><p>${bugs.name["name-EUes"]}</p>`;  
+            document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${bugs.icon_uri}/><p>${bugs.name["name-EUes"]}</p></div>`;  
           });
         } 
     }
@@ -76,10 +76,20 @@ let keyNameBugs;
         let monthSouthernWithNames = numberToMonth(monthSouthern);
         let priceMininook = bugsList[keyNameBugs].price;
         let priceKamilo = bugsList[keyNameBugs]["price-flick"];
-        document.querySelector('.imgFishBugsMain').innerHTML = `<img src=${image}/>`;
-        document.querySelector('.nameFishBugsMain').innerHTML =`<p>${name}</p>`; 
-        document.querySelector('.monthFishingPriceFishAndBugs').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favorite">anadir a favorito</button>`;
-        document.querySelector('.favorite').addEventListener("click", addFavorite);
+        document.querySelector('.imgFishBugsMainMobile').innerHTML = `<img src=${image}/>`;
+        document.querySelector('.nameFishBugsMobile').innerHTML =`<p>${name}</p>`; 
+        document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteMobile">anadir a favorito</button>`;
+        document.querySelector('.favoriteMobile').addEventListener("click", addFavorite);
+
+        document.querySelector('.imgFishBugsMainDesktop').innerHTML = `<img src=${image}/>`;
+        document.querySelector('.nameFishBugsDesktop').innerHTML =`<p>${name}</p>`; 
+        document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteDesktop">anadir a favorito</button>`;
+        document.querySelector('.favoriteDesktop').addEventListener("click", addFavorite);
+
+        document.querySelector('.imgFishBugsMainDesktopMaxPixel').innerHTML = `<img src=${image}/>`;
+        document.querySelector('.nameFishBugsDesktopMaxPixel').innerHTML =`<p>${name}</p>`; 
+        document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteDesktopMaxPixel">anadir a favorito</button>`;
+        document.querySelector('.favoriteDesktopMaxPixel').addEventListener("click", addFavorite);
     }
 
     
