@@ -23,25 +23,23 @@ fetch("http://acnhapi.com/v1/fossils/")
 
 })
 
-console.log(fossilList)
-
 document.querySelector('.dropdownFishFossilBugs').onchange = fossilNameImage;
 showFavorite()
 
 function checkIfItIsAlready(key,arr){
-  let check = false
+  let check = false;
   arr.forEach(current =>{
     if (current["file-name"] == key) {
-      check = true
+      check = true;
     } 
   })
-  return check
+  return check;
 }
 
 function showFavorite() {
   document.querySelector('.callFavoriteStar').innerHTML = "";
-  if(localStorage.getItem("fossilList")){
-    let arrayLocal = localStorage.getItem("fossilList");
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     arrayLocalDesparsedo.forEach(fossil => {
       document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
@@ -50,7 +48,7 @@ function showFavorite() {
 }
 
 function addFavorite() {
-  if(localStorage.getItem()){
+  if(localStorage.getItem("fossilList")){
     let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
@@ -65,8 +63,34 @@ function addFavorite() {
   showFavorite() 
 }
 
-function deleteFavorite() {
-  localStorage.removeItem([fossilList[keyNameFossil]]);
+function deleteFromArray(key, arr) {
+  let finalArray = [];
+  i = 0;
+  arr.forEach(current =>{
+    if (current["file-name"] != key) {
+      finalArray[i] = current;
+    } 
+    i++;
+  })
+  return finalArray
+}
+
+function deleteFavorite(){
+  
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    if (checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)){
+      let newArray = deleteFromArray(keyNameFossil, arrayLocalDesparsedo);
+      if (newArray.length == 0){
+        localStorage.removeItem(list);
+      } else {
+        let nuevoArrayParseado = JSON.stringify(newArray);
+        localStorage.setItem(list, nuevoArrayParseado);
+      }
+    }
+  }
+  showFavorite();
 }
 
 function myFunction() {

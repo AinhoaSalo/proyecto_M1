@@ -24,6 +24,16 @@ fetch("http://acnhapi.com/v1/fish/")
 document.querySelector('.dropdownFishFossilBugs').onchange = fishNameImage;
 showFavorite();
 
+function checkIfItIsAlready(key,arr){
+  let check = false;
+  arr.forEach(current =>{
+    if (current["file-name"] == key) {
+      check = true;
+    } 
+  })
+  return check;
+}
+
 function showFavorite() {
   document.querySelector('.callFavoriteStar').innerHTML = "";
   if(localStorage.getItem("fishList")){
@@ -60,23 +70,49 @@ function numberToMonth(array) {
 }
 
 function addFavorite() {
-  if(localStorage.getItem()){
+  if(localStorage.getItem(list)){
     let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
-    if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
-      arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
+    if (!checkIfItIsAlready(keyNameFish,arrayLocalDesparsedo)) {
+      arrayLocalDesparsedo.push(fishList[keyNameFish]);
       let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
       localStorage.setItem(list, nuevoArrayParseado);
     }
   } else {
-      let nuevoArrayParseado = JSON.stringify([fossilList[keyNameFossil]]);
+      let nuevoArrayParseado = JSON.stringify([fishList[keyNameFish]]);
       localStorage.setItem(list, nuevoArrayParseado);
   }
   showFavorite() 
 }
 
-function deleteFavorite() {
-  localStorage.removeItem(fossilList[keyNameFossil]);
+function deleteFromArray(key, arr) {
+  let finalArray = [];
+  i = 0;
+  arr.forEach(current =>{
+    if (current["file-name"] != key) {
+      finalArray[i] = current;
+    } 
+    i++;
+  })
+  return finalArray
+}
+
+function deleteFavorite(){
+  
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    if (checkIfItIsAlready(keyNameFish,arrayLocalDesparsedo)){
+      let newArray = deleteFromArray(keyNameFish, arrayLocalDesparsedo);
+      if (newArray.length == 0){
+        localStorage.removeItem(list);
+      } else {
+        let nuevoArrayParseado = JSON.stringify(newArray);
+        localStorage.setItem(list, nuevoArrayParseado);
+      }
+    }
+  }
+  showFavorite();
 }
 
 function fishNameImage() {

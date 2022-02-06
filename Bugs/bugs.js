@@ -24,6 +24,16 @@ const list = "bugsList";
     document.querySelector('.dropdownFishFossilBugs').onchange = bugsNameImage;
     showFavorite();
 
+    function checkIfItIsAlready(key,arr){
+        let check = false;
+        arr.forEach(current =>{
+          if (current["file-name"] == key) {
+            check = true;
+          } 
+        })
+        return check;
+      }
+      
     function showFavorite() {
         document.querySelector('.callFavoriteStar').innerHTML = "";
         if(localStorage.getItem("bugsList")){
@@ -59,24 +69,50 @@ const list = "bugsList";
     }
 
     function addFavorite() {
-        if(localStorage.getItem()){
+        if(localStorage.getItem(list)){
           let arrayLocal = localStorage.getItem(list);
           let arrayLocalDesparsedo = JSON.parse(arrayLocal);
-          if (!checkIfItIsAlready(keyNameFossil,arrayLocalDesparsedo)) {
-            arrayLocalDesparsedo.push(fossilList[keyNameFossil]);
+          if (!checkIfItIsAlready(keyNameBugs,arrayLocalDesparsedo)) {
+            arrayLocalDesparsedo.push(bugsList[keyNameBugs]);
             let nuevoArrayParseado = JSON.stringify(arrayLocalDesparsedo);
             localStorage.setItem(list, nuevoArrayParseado);
           }
         } else {
-            let nuevoArrayParseado = JSON.stringify([fossilList[keyNameFossil]]);
+            let nuevoArrayParseado = JSON.stringify([bugsList[keyNameBugs]]);
             localStorage.setItem(list, nuevoArrayParseado);
         }
         showFavorite() 
       }
 
-    function deleteFavorite() {
-        localStorage.removeItem([bugsList[keyNameBugs]]);
-    }
+      function deleteFromArray(key, arr) {
+        let finalArray = [];
+        i = 0;
+        arr.forEach(current =>{
+          if (current["file-name"] != key) {
+            finalArray[i] = current;
+          } 
+          i++;
+        })
+        return finalArray
+      }
+      
+      function deleteFavorite(){
+        
+        if(localStorage.getItem(list)){
+          let arrayLocal = localStorage.getItem(list);
+          let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+          if (checkIfItIsAlready(keyNameBugs,arrayLocalDesparsedo)){
+            let newArray = deleteFromArray(keyNameBugs, arrayLocalDesparsedo);
+            if (newArray.length == 0){
+              localStorage.removeItem(list);
+            } else {
+              let nuevoArrayParseado = JSON.stringify(newArray);
+              localStorage.setItem(list, nuevoArrayParseado);
+            }
+          }
+        }
+        showFavorite();
+      }
 
     function bugsNameImage() {
         keyNameBugs = this.value;
