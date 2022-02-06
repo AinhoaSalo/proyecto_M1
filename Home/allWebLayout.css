@@ -182,6 +182,24 @@ body{
     background-repeat: space;  
 }
 
+.mainUp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleFishFossilBugs{
+    background-color: rgba(132, 189, 58, 0.678);
+    padding: 0px 40px;
+    border-radius: 10px;
+}
+
+.titleFishFossilBugsMobile{
+    font-size: 10px;
+    background-color: rgba(132, 189, 58, 0.678);
+    padding: 0px 15px;
+    border-radius: 10px;
+}
+
 .listFishFossilBugs{
     display: flex;
     justify-content: space-around;
@@ -189,7 +207,7 @@ body{
 
 .formatDataMainSelectMobile{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     background-color: rgba(132, 189, 58, 0.678);
     padding: 80px;
     margin-top: 20px;
@@ -198,6 +216,14 @@ body{
 
 .nameAndPriceFossilMobile p{
     font-size: 16px;
+}
+
+.monthFishingPriceFishAndBugsMobile{
+    margin: 10px 0px;
+}
+
+.buttonMobile{
+    display: flex;
 }
 
 .formatDataMainSelectDesktop{
@@ -297,9 +323,19 @@ body{
     margin-top: 5px;
 }
 
-.callFavoriteStar{
+.callFavoriteStarMobile{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.callFavoriteStarDesktop{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.callFavoriteStarDesktopMaxPixel{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .sonCallFavoriteStar{
@@ -375,7 +411,7 @@ footer span{
         display: none;
     }
     
-    .favoriteStarDesktop{
+    .favoritesAnimalsDesktop{
         display: none;
     }
 
@@ -387,10 +423,13 @@ footer span{
         display: none;
     }
 
-    .favoriteStarDesktopMaxPixel{
+    .favoritesAnimalsDesktopMaxPixel{
         display: none;
     }
- 
+
+    .titleFishFossilBugs{
+        display: none;
+    }
 
 }
 
@@ -408,7 +447,11 @@ footer span{
         display: none;
     }
     
-    .favoriteStarMobile{
+    .favoritesAnimalsMobile{
+        display: none;
+    }
+
+    .titleFishFossilBugsMobile{
         display: none;
     }
 
@@ -420,9 +463,10 @@ footer span{
         display: none;
     }
 
-    .favoriteStarDesktopMaxPixel{
+    .favoritesAnimalsDesktopMaxPixel{
         display: none;
     }
+
  
 }
 
@@ -436,11 +480,15 @@ footer span{
         display: none;
     }
 
-        .favoriteStarMobile{
+    .favoritesAnimalsMobile{
         display: none;
     }
 
     .formatDataMainSelectMobile{
+        display: none;
+    }
+
+    .titleFishFossilBugsMobile{
         display: none;
     }
 
@@ -452,7 +500,7 @@ footer span{
         display: none;
     }
 
-    .favoriteStarDesktop{
+    .favoritesAnimalsDesktop{
         display: none;
     }
  

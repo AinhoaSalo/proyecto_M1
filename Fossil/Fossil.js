@@ -37,14 +37,32 @@ function checkIfItIsAlready(key,arr){
 }
 
 function showFavorite() {
-  document.querySelector('.callFavoriteStar').innerHTML = "";
+  document.querySelector('.callFavoriteStarMobile').innerHTML = "";
   if(localStorage.getItem(list)){
     let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     arrayLocalDesparsedo.forEach(fossil => {
-      document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
-    });
+      document.querySelector('.callFavoriteStarMobile').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
+  });
   } 
+
+  document.querySelector('.callFavoriteStarDesktop').innerHTML = "";
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    arrayLocalDesparsedo.forEach(fossil => {
+      document.querySelector('.callFavoriteStarDesktop').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
+    });
+  }
+
+  document.querySelector('.callFavoriteStarDesktopMaxPixel').innerHTML = "";
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    arrayLocalDesparsedo.forEach(fossil => {
+      document.querySelector('.callFavoriteStarDesktopMaxPixel').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fossil.image_uri}/><p>${fossil.name["name-EUes"]}</p></div>`;  
+    });
+  }
 }
 
 function addFavorite() {
@@ -108,19 +126,19 @@ function fossilNameImage() {
   let name = fossilList[keyNameFossil].name["name-EUes"];
   let priceMininook = fossilList[keyNameFossil].price;
   document.querySelector('.imageFossilMobile').innerHTML = `<div class="sonImgFossilMainMobile"><img src=${image}/></div>`; 
-  document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p><strong>Nombre:</strong> ${name}</p></div><div class="sonNameAndPriceFossil"><p><strong>Precio Mininook:</strong> ${priceMininook}</p></div>`;
   document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteMobile').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteMobile').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imageFossilDesktop').innerHTML = `<div class="sonImgFossilMainDesktop"><img src=${image}/></div>`; 
-  document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p><strong>Nombre:</strong> ${name}</p></div><div class="sonNameAndPriceFossil"><p><strong>Precio Mininook:</strong> ${priceMininook}</p></div>`;
   document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteDesktop').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktop').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imageFossilDesktopMaxPixel').innerHTML = `<div class="sonImgFossilMainDesktopMaxPixel"><img src=${image}/></div>`; 
-  document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p><strong>Nombre:</strong> ${name}</p></div><div class="sonNameAndPriceFossil"><p><strong>Precio Mininook:</strong> ${priceMininook}</p></div>`;
   document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteDesktopMaxPixel').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktopMaxPixel').addEventListener("click", deleteFavorite);

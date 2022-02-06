@@ -35,16 +35,32 @@ function checkIfItIsAlready(key,arr){
 }
 
 function showFavorite() {
-  document.querySelector('.callFavoriteStar').innerHTML = "";
-  if(localStorage.getItem("fishList")){
-    let arrayLocal = localStorage.getItem("fishList");
+  document.querySelector('.callFavoriteStarMobile').innerHTML = "";
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
     let arrayLocalDesparsedo = JSON.parse(arrayLocal);
     arrayLocalDesparsedo.forEach(fish => {
-      console.log(fish)
-      document.querySelector('.callFavoriteStar').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fish.icon_uri}/><p>${fish.name["name-EUes"]}</p></div>`;  
-
+      document.querySelector('.callFavoriteStarMobile').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fish.icon_uri}/><p>${fish.name["name-EUes"]}</p></div>`;  
     });
   } 
+
+  document.querySelector('.callFavoriteStarDesktop').innerHTML = "";
+  if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    arrayLocalDesparsedo.forEach(fish => {
+      document.querySelector('.callFavoriteStarDesktop').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fish.icon_uri}/><p>${fish.name["name-EUes"]}</p></div>`;  
+    });
+  }
+
+  document.querySelector('.callFavoriteStarDesktopMaxPixel').innerHTML = "";
+    if(localStorage.getItem(list)){
+    let arrayLocal = localStorage.getItem(list);
+    let arrayLocalDesparsedo = JSON.parse(arrayLocal);
+    arrayLocalDesparsedo.forEach(fish => {
+      document.querySelector('.callFavoriteStarDesktopMaxPixel').innerHTML += `<div class="sonCallFavoriteStar"><img src=${fish.icon_uri}/><p>${fish.name["name-EUes"]}</p></div>`;  
+    });
+  }
 }
 
 function myFunction() {
@@ -126,23 +142,23 @@ function fishNameImage() {
   let priceMininook = fishList[keyNameFish].price;
   let priceCjMininook = fishList[keyNameFish]["price-cj"];
   document.querySelector('.imgFishBugsMainMobile').innerHTML = `<img src=${image}/>`;
-  document.querySelector('.nameFishBugsMobile').innerHTML =`<p>${name}</p>`; 
-  document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p>Meses de pesca en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de pesca en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene CJ a la isla: ${priceCjMininook}`;
-  document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile">Eliminar de favoritos</button></div>`;
+  document.querySelector('.nameFishBugsMobile').innerHTML =`<p><strong>${name}</strong></p>`; 
+  document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p><strong>Meses pesca hemisferio norte:</strong> ${monthNorthernWithNames}</p><strong>Meses pesca hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><strong>Precio CJ:</strong> ${priceCjMininook}`;
+  document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPricefish"><button class="addFavoriteMobile">Anadir a favoritos</button></div><div class="sonNameAndPricefish"><button class="deleteFavoriteMobile">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteMobile').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteMobile').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imgFishBugsMainDesktop').innerHTML = `<img src=${image}/>`;
-  document.querySelector('.nameFishBugsDesktop').innerHTML =`<p>${name}</p>`; 
-  document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p>Meses de pesca en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de pesca en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene CJ a la isla: ${priceCjMininook}`;
-  document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop">Eliminar de favoritos</button></div>`;
+  document.querySelector('.nameFishBugsDesktop').innerHTML =`<p><strong>${name}</strong></p>`; 
+  document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p><strong>Meses pesca hemisferio norte:</strong> ${monthNorthernWithNames}</p><strong>Meses pesca hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><strong>Precio CJ:</strong> ${priceCjMininook}`;
+  document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPricefish"><button class="addFavoriteDesktop">Anadir a favoritos</button></div><div class="sonNameAndPricefish"><button class="deleteFavoriteDesktop">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteDesktop').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktop').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imgFishBugsMainDesktopMaxPixel').innerHTML = `<img src=${image}/>`;
-  document.querySelector('.nameFishBugsDesktopMaxPixel').innerHTML =`<p>${name}</p>`; 
-  document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p>Meses de pesca en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de pesca en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene CJ a la isla: ${priceCjMininook}`;
-  document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel">Eliminar de favoritos</button></div>`;
+  document.querySelector('.nameFishBugsDesktopMaxPixel').innerHTML =`<p><strong>${name}</strong></p>`; 
+  document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p><strong>Meses pesca hemisferio norte:</strong> ${monthNorthernWithNames}</p><strong>Meses pesca hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><strong>Precio CJ:</strong> ${priceCjMininook}`;
+  document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPricefish"><button class="addFavoriteDesktopMaxPixel">Anadir a favoritos</button></div><div class="sonNameAndPricefish"><button class="deleteFavoriteDesktopMaxPixel">Eliminar de favoritos</button></div>`;
   document.querySelector('.addFavoriteDesktopMaxPixel').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktopMaxPixel').addEventListener("click", deleteFavorite);
 }
