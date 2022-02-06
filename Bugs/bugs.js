@@ -3,7 +3,13 @@ let keyNameBugs;
 
     fetch("http://acnhapi.com/v1/bugs/")
     .then(function (res){
-        return res.json();
+        if (res.ok) {
+            return res.json();
+        } else {
+            document.querySelector(".formatDataMainSelectMobile").innerHTML = "ERROR";
+            document.querySelector(".formatDataMainSelectDesktop").innerHTML = "ERROR";
+            document.querySelector(".formatDataMainSelectDesktopMaxPixel").innerHTML = "ERROR";
+        }
     })
     .then(function (response){
         bugsList = response;
@@ -66,6 +72,10 @@ let keyNameBugs;
         showFavorite() 
     }
 
+    function deleteFavorite() {
+        localStorage.removeItem([bugsList[keyNameBugs]]);
+    }
+
     function bugsNameImage() {
         keyNameBugs = this.value;
         let image = bugsList[keyNameBugs].icon_uri;
@@ -78,18 +88,25 @@ let keyNameBugs;
         let priceKamilo = bugsList[keyNameBugs]["price-flick"];
         document.querySelector('.imgFishBugsMainMobile').innerHTML = `<img src=${image}/>`;
         document.querySelector('.nameFishBugsMobile').innerHTML =`<p>${name}</p>`; 
-        document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteMobile">anadir a favorito</button>`;
-        document.querySelector('.favoriteMobile').addEventListener("click", addFavorite);
+        document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo}`;
+        document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile">Eliminar de favoritos</button></div>`;
+        document.querySelector('.addFavoriteMobile').addEventListener("click", addFavorite);
+        document.querySelector('.deleteFavoriteMobile').addEventListener("click", deleteFavorite);
 
         document.querySelector('.imgFishBugsMainDesktop').innerHTML = `<img src=${image}/>`;
         document.querySelector('.nameFishBugsDesktop').innerHTML =`<p>${name}</p>`; 
-        document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteDesktop">anadir a favorito</button>`;
-        document.querySelector('.favoriteDesktop').addEventListener("click", addFavorite);
+        document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo}`;
+        document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop">Eliminar de favoritos</button></div>`;
+        document.querySelector('.addFavoriteDesktop').addEventListener("click", addFavorite);
+        document.querySelector('.deleteFavoriteDesktop').addEventListener("click", deleteFavorite);
 
         document.querySelector('.imgFishBugsMainDesktopMaxPixel').innerHTML = `<img src=${image}/>`;
         document.querySelector('.nameFishBugsDesktopMaxPixel').innerHTML =`<p>${name}</p>`; 
-        document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo} <button class="favoriteDesktopMaxPixel">anadir a favorito</button>`;
-        document.querySelector('.favoriteDesktopMaxPixel').addEventListener("click", addFavorite);
+        document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p>Meses de captura de insectos en el emisferio norte: ${monthNorthernWithNames}</p><p>Meses de captura de insectos en el emisferio sur: ${monthSouthernWithNames}</p></div><p>Precio en la Mininook: ${priceMininook}</p><p>Precio cuando viene Kamilo a la isla: ${priceKamilo}`;
+        document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel">Eliminar de favoritos</button></div>`;
+        document.querySelector('.addFavoriteDesktopMaxPixel').addEventListener("click", addFavorite);
+        document.querySelector('.deleteFavoriteDesktopMaxPixel').addEventListener("click", deleteFavorite);
+
     }
 
     

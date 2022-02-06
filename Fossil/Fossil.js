@@ -3,7 +3,14 @@ let keyNameFossil;
 
 fetch("http://acnhapi.com/v1/fossils/")
 .then(function (res){
+  if (res.ok) {
     return res.json();
+  } else {
+    document.querySelector(".formatDataMainSelectMobile").innerHTML = "ERROR";
+    document.querySelector(".formatDataMainSelectDesktop").innerHTML = "ERROR";
+    document.querySelector(".formatDataMainSelectDesktopMaxPixel").innerHTML = "ERROR";
+  }
+   
 })
 .then(function (response){
     fossilList = response;
@@ -47,6 +54,10 @@ function addFavorite() {
   showFavorite() 
 }
 
+function deleteFavorite() {
+  localStorage.removeItem([fossilList[keyNameFossil]]);
+}
+
 function myFunction() {
     var x = document.getElementById("myLinks");
     if (x.style.display === "block") {
@@ -57,21 +68,27 @@ function myFunction() {
   }
 
 function fossilNameImage() {
-    keyNameFossil = this.value;
-    let image = fossilList[keyNameFossil].image_uri;
-    let name = fossilList[keyNameFossil].name["name-EUes"];
-    let priceMininook = fossilList[keyNameFossil].price;
-    document.querySelector('.imageFossilMobile').innerHTML = `<div class="sonImgFossilMainMobile"><img src=${image}/></div>`; 
-    document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteMobile">anadir a favorito</button></div>`;
-    document.querySelector('.favoriteMobile').addEventListener("click", addFavorite);
+  keyNameFossil = this.value;
+  let image = fossilList[keyNameFossil].image_uri;
+  let name = fossilList[keyNameFossil].name["name-EUes"];
+  let priceMininook = fossilList[keyNameFossil].price;
+  document.querySelector('.imageFossilMobile').innerHTML = `<div class="sonImgFossilMainMobile"><img src=${image}/></div>`; 
+  document.querySelector('.nameAndPriceFossilMobile').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile">Eliminar de favoritos</button></div>`;
+  document.querySelector('.addFavoriteMobile').addEventListener("click", addFavorite);
+  document.querySelector('.deleteFavoriteMobile').addEventListener("click", deleteFavorite);
 
-    document.querySelector('.imageFossilDesktop').innerHTML = `<div class="sonImgFossilMainDesktop"><img src=${image}/></div>`; 
-    document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktop">anadir a favorito</button></div>`;
-    document.querySelector('.favoriteDesktop').addEventListener("click", addFavorite);
+  document.querySelector('.imageFossilDesktop').innerHTML = `<div class="sonImgFossilMainDesktop"><img src=${image}/></div>`; 
+  document.querySelector('.nameAndPriceFossilDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop">Eliminar de favoritos</button></div>`;
+  document.querySelector('.addFavoriteDesktop').addEventListener("click", addFavorite);
+  document.querySelector('.deleteFavoriteDesktop').addEventListener("click", deleteFavorite);
 
-    document.querySelector('.imageFossilDesktopMaxPixel').innerHTML = `<div class="sonImgFossilMainDesktopMaxPixel"><img src=${image}/></div>`; 
-    document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div><div class="sonNameAndPriceFossil"><button class="favoriteDesktopMaxPixel">anadir a favorito</button></div>`;
-    document.querySelector('.favoriteDesktopMaxPixel').addEventListener("click", addFavorite);
+  document.querySelector('.imageFossilDesktopMaxPixel').innerHTML = `<div class="sonImgFossilMainDesktopMaxPixel"><img src=${image}/></div>`; 
+  document.querySelector('.nameAndPriceFossilDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><p>Nombre: ${name}</p></div><div class="sonNameAndPriceFossil"><p>Precio en la Mininook: ${priceMininook}</p></div>`;
+  document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel">Anadir a favoritos</button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel">Eliminar de favoritos</button></div>`;
+  document.querySelector('.addFavoriteDesktopMaxPixel').addEventListener("click", addFavorite);
+  document.querySelector('.deleteFavoriteDesktopMaxPixel').addEventListener("click", deleteFavorite);
 }
 
 
