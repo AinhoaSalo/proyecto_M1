@@ -240,6 +240,19 @@ body{
     margin-top: 60px;
 }
 
+.buttonDesktopMaxPixel{
+    margin-top: 60px;
+}
+
+.buttonDesktopFossil{
+    display: flex;
+}
+
+.buttonDesktopMaxPixelFossil{
+    display: flex;
+}
+
+.buttonDesktopMaxPixelFossil
 .monthFishingPriceFishAndBugsDesktop{
     margin: 10px;
     padding: 28px;
