@@ -144,24 +144,21 @@ function bugsNameImage() {
   document.querySelector('.imgFishBugsMainMobile').innerHTML = `<img src=${image}/>`;
   document.querySelector('.nameFishBugsMobile').innerHTML =`<p><strong>${name}</strong></p>`; 
   document.querySelector('.monthFishingPriceFishAndBugsMobile').innerHTML = `<div><p><strong>Meses captura hemisferio norte:</strong> ${monthNorthernWithNames}</p><p><strong>Meses captura hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><p><strong>Precio Kamilo:</strong> ${priceKamilo}`;
-  document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile"><img src="../pictures/favorito.png" alt="añade favorito" width=¨30px¨ /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile"><img src="../pictures/estrella.png" alt="eliminar favorito" width=¨30px¨ /></button></div>`;
+  document.querySelector('.buttonMobile').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteMobile"><img src="../pictures/favorito.png" alt="añade favorito" width="30px" /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteMobile"><img src="../pictures/estrella.png" alt="eliminar favorito" width="30px" /></button></div>`;
   document.querySelector('.addFavoriteMobile').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteMobile').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imgFishBugsMainDesktop').innerHTML = `<img src=${image}/>`;
   document.querySelector('.nameFishBugsDesktop').innerHTML =`<p><strong>${name}</strong></p>`; 
   document.querySelector('.monthFishingPriceFishAndBugsDesktop').innerHTML = `<div><p><strong>Meses captura hemisferio norte:</strong> ${monthNorthernWithNames}</p><p><strong>Meses captura hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><p><strong>Precio Kamilo:</strong> ${priceKamilo}`;
-  document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop"><img src="../pictures/favorito.png" alt="añade favorito" width=¨35px¨ /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop"><img src="../pictures/estrella.png" alt="eliminar favorito" width=¨35px¨ /></button></div>`;
+  document.querySelector('.buttonDesktop').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktop"><img src="../pictures/favorito.png" alt="añade favorito" width="35px" /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktop"><img src="../pictures/estrella.png" alt="eliminar favorito" width="35px" /></button></div>`;
   document.querySelector('.addFavoriteDesktop').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktop').addEventListener("click", deleteFavorite);
 
   document.querySelector('.imgFishBugsMainDesktopMaxPixel').innerHTML = `<img src=${image}/>`;
   document.querySelector('.nameFishBugsDesktopMaxPixel').innerHTML =`<p><strong>${name}</strong></p>`; 
   document.querySelector('.monthFishingPriceFishAndBugsDesktopMaxPixel').innerHTML = `<div><p><strong>Meses captura hemisferio norte:</strong> ${monthNorthernWithNames}</p><p><strong>Meses captura hemisferio sur:</strong> ${monthSouthernWithNames}</p></div><p><strong>Precio Mininook:</strong> ${priceMininook}</p><p><strong>Precio Kamilo:</strong> ${priceKamilo}`;
-  document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel"><img src="../pictures/favorito.png" alt="añade favorito" width=¨40px¨ /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel"><img src="../pictures/estrella.png" alt="eliminar favorito" width=¨40px¨ /></button></div>`;
+  document.querySelector('.buttonDesktopMaxPixel').innerHTML = `<div class="sonNameAndPriceFossil"><button class="addFavoriteDesktopMaxPixel"><img src="../pictures/favorito.png" alt="añade favorito" width="40px" /></button></div><div class="sonNameAndPriceFossil"><button class="deleteFavoriteDesktopMaxPixel"><img src="../pictures/estrella.png" alt="eliminar favorito" width="40px" /></button></div>`;
   document.querySelector('.addFavoriteDesktopMaxPixel').addEventListener("click", addFavorite);
   document.querySelector('.deleteFavoriteDesktopMaxPixel').addEventListener("click", deleteFavorite);
 }
-
-    
-
