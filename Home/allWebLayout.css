@@ -181,6 +181,7 @@ body{
 .mainUp{
     display: flex;
     justify-content: space-between;
+    font-size: 10px;
 }
 
 .titleFishFossilBugs{
@@ -235,6 +236,15 @@ body{
     font-size: 18px;
 }
 
+.buttonDesktop{
+    margin-top: 60px;
+}
+
+.monthFishingPriceFishAndBugsDesktop{
+    margin: 10px;
+    padding: 28px;
+}
+
 .formatDataMainSelectDesktopMaxPixel{
     display: flex;
     justify-content: space-around;
@@ -242,10 +252,16 @@ body{
     padding: 150px;
     margin-top: 20px;
     border-radius: 15px;
+    font-size: 20px;
 }
 
 .nameAndPriceFossilDesktopMaxPixel p{
     font-size: 20px;
+}
+
+.monthFishingPriceFishAndBugsDesktopMaxPixel{
+    margin: 10px;
+    padding: 28px;
 }
 
 .sonImgFossilMainMobile img{
