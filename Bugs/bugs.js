@@ -73,7 +73,7 @@ function myFunction() {
 }
 
 function getMonthByNumber(number) {
-  let month = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"];
+  let month = [" Enero"," Febrero"," Marzo"," Abril"," Mayo"," Junio"," Julio", " Agosto"," Septiembre", " Octubre", " Noviembre", " Diciembre"];
   return month[(number-1)]
 }
 
