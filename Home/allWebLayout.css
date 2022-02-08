@@ -17,7 +17,7 @@ body{
     overflow: hidden;
     background-color: rgb(184, 157, 117);
     position: relative;
-    border: 2px rgb(162, 224, 146) solid;
+    border-bottom: 2px rgb(162, 224, 146) solid;
 }
   
 .topnav #myLinks {
@@ -60,7 +60,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
-    border: 2px rgb(162, 224, 146) solid;
+    border-bottom: 2px rgb(162, 224, 146) solid;
     background: rgb(191, 254, 223);
 }
 
@@ -368,9 +368,7 @@ body{
 }
 
 footer{
-    margin: 20px;
-    border: 5px rgb(162, 224, 146) solid;
-    border-radius: 10px;
+    border-top: 2px rgb(162, 224, 146) solid;
     padding: 10px;
     min-height: 100px;
     background-color: rgb(191, 254, 223);
