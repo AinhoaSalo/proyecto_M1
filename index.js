@@ -1,6 +1,8 @@
 const express = require("express");
 const mongodb = require("mongodb");
 const app = express();
+const bcrypt = require("bcrypt");
+
 const clients = require("./routes/registro");
 
 app.use(express.static("public"));
